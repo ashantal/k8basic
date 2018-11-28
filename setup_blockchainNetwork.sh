@@ -35,16 +35,9 @@ if [ "$(kubectl get pvc | grep shared-pvc | awk '{print $2}')" != "Bound" ]; the
     echo "The Persistant Volume does not seem to exist or is not bound"
     echo "Creating Persistant Volume"
 
-    if [ "$1" == "--paid" ]; then
-        echo "You passed argument --paid. Make sure you have an IBM Cloud Kubernetes - Standard tier. Else, remove --paid option"
-        echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/createVolume-paid.yaml"
-        kubectl create -f ${KUBECONFIG_FOLDER}/createVolume-paid.yaml
-        sleep 5
-    else
-        echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/createVolume.yaml"
-        kubectl create -f ${KUBECONFIG_FOLDER}/createVolume.yaml
-        sleep 5
-    fi
+    echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/createVolume.yaml"
+    kubectl create -f ${KUBECONFIG_FOLDER}/createVolume.yaml
+    sleep 5
 
     if [ "kubectl get pvc | grep shared-pvc | awk '{print $3}'" != "shared-pv" ]; then
         echo "Success creating Persistant Volume"

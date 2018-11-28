@@ -1,6 +1,10 @@
 *Read this in other languages: [中国](README-cn.md).*
 
-# Deploy the Blockchain network using Kubernetes APIs on IBM Cloud
+# Deploy the Blockchain network using Kubernetes APIs
+This repo has been updated to deploy only the basic network components
+
+
+# Deploy the Blockchain network using Kubernetes APIs
 
 *Read this in other languages: [한국어](README-ko.md).*
 
