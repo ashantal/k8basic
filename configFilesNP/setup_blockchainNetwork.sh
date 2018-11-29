@@ -4,7 +4,7 @@ if [ -d "${PWD}/configFiles" ]; then
     KUBECONFIG_FOLDER=${PWD}/configFiles
 else
     echo "Configuration files are not found."
-    exit
+    KUBECONFIG_FOLDER=${PWD}
 fi
 
 # Create Docker deployment
