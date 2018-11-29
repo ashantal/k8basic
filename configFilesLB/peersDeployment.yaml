@@ -9,6 +9,7 @@ spec:
     metadata:
       labels:
         name: orderer
+        app: bc
     spec:
       volumes:
       - name: sharedvolume
@@ -69,6 +70,7 @@ spec:
     metadata:
       labels:
         name: ca
+        app: bc
     spec:
       volumes:
       - name: sharedvolume
@@ -111,6 +113,7 @@ spec:
     metadata:
       labels:
         name: org1peer1
+        app: bc
     spec:
       volumes:
       - name: sharedvolume
