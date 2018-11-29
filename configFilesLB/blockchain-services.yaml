@@ -11,7 +11,6 @@ spec:
     name: ca
   ports:
   - protocol: TCP
-    nodePort: 30054
     targetPort: 7054
     port: 80
     name: grpc
@@ -28,7 +27,6 @@ spec:
     name: orderer
   ports:
   - protocol: TCP
-    nodePort: 31010
     targetPort: 31010
     port: 81
     name: grpc
@@ -45,7 +43,6 @@ spec:
     name: org1peer1
   ports:
   - protocol: TCP
-    nodePort: 30110
     targetPort: 30110
     port: 82
     name: grpc
