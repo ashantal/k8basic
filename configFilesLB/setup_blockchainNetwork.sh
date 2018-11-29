@@ -88,9 +88,9 @@ done
 
 
 # Create services for all peers, ca, orderer
-echo -e "\nCreating Services for blockchain network"
-echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/blockchain-services.yaml"
-kubectl create -f ${KUBECONFIG_FOLDER}/blockchain-services.yaml
+#echo -e "\nCreating Services for blockchain network"
+#echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/blockchain-services.yaml"
+#kubectl create -f ${KUBECONFIG_FOLDER}/blockchain-services.yaml
 
 
 # Create peers, ca, orderer using Kubernetes Deployments
