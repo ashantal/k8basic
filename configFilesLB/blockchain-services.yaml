@@ -47,7 +47,6 @@ spec:
     port: 82
     name: grpc
   - protocol: TCP
-    nodePort: 30111
     targetPort: 30111
     port: 83
     name: events
