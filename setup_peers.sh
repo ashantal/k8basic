@@ -1,3 +1,10 @@
+if [ -d "${PWD}/configFiles" ]; then
+    KUBECONFIG_FOLDER=${PWD}/configFiles
+else
+    echo "Configuration files are not found."
+    exit
+fi
+
 #!/bin/bash
 # Copy the required files(configtx.yaml, cruypto-config.yaml, sample chaincode etc.) into volume
 # Create peers, ca, orderer using Kubernetes Deployments
