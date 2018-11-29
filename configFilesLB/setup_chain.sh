@@ -1,3 +1,10 @@
+if [ -d "${PWD}/configFiles" ]; then
+    KUBECONFIG_FOLDER=${PWD}/configFiles
+else
+    echo "Configuration files are not found."
+    KUBECONFIG_FOLDER=${PWD}
+fi
+
 # Create peers, ca, orderer using Kubernetes Deployments
 echo -e "\nCreating new Deployment to create four peers in network"
 echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/peersDeployment.yaml"
