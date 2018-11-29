@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: blockchain-ca-lb
+  name: blockchain-ca
   labels:
-    run: blockchain-ca-lb
+    run: blockchain-ca
 spec:
   type: LoadBalancer
   selector:
@@ -19,9 +19,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: blockchain-orderer-lb
+  name: blockchain-orderer
   labels:
-    run: blockchain-orderer-lb
+    run: blockchain-orderer
 spec:
   type: LoadBalancer
   selector:
@@ -36,9 +36,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: blockchain-org1peer1-lb
+  name: blockchain-org1peer1
   labels:
-    run: blockchain-org1peer1-lb
+    run: blockchain-org1peer1
 spec:
   type: LoadBalancer
   selector:
