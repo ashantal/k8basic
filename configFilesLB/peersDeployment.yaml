@@ -135,13 +135,13 @@ spec:
         - name: CORE_PEER_ID
           value: org1peer1
         - name: CORE_PEER_ADDRESS
-          value: blockchain-org1peer1:7051
+          value: blockchain:7051
         - name: CORE_PEER_LISTENADDRESS
           value: 0.0.0.0:7051
         - name: CORE_PEER_EVENTS_ADDRESS
           value: 0.0.0.0:7053
         - name: CORE_PEER_GOSSIP_BOOTSTRAP
-          value: blockchain-org1peer1:7051
+          value: blockchain:7051
         - name: CORE_PEER_GOSSIP_ORGLEADER
           value: "false"
         - name: CORE_PEER_GOSSIP_SKIPHANDSHAKE
@@ -179,7 +179,7 @@ spec:
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric/
         - name: ORDERER_URL
-          value: blockchain-orderer:7050
+          value: blockchain:7050
         - name: GODEBUG
           value: "netdns=go"
         - name: CORE_VM_DOCKER_ATTACHSTDOUT
