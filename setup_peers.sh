@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -d "${PWD}/configFiles" ]; then
     KUBECONFIG_FOLDER=${PWD}/configFiles
 else
@@ -5,10 +7,8 @@ else
     exit
 fi
 
-#!/bin/bash
-# Copy the required files(configtx.yaml, cruypto-config.yaml, sample chaincode etc.) into volume
 # Create peers, ca, orderer using Kubernetes Deployments
-echo -e "\nCreating new Deployment to create four peers in network"
+echo -e "\nCreating new Deployment to create peers in network"
 echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/peersDeployment.yaml"
 kubectl create -f ${KUBECONFIG_FOLDER}/peersDeployment.yaml
 
