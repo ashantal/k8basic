@@ -1,5 +1,5 @@
 
-KUBECONFIG_FOLDER=${PWD}/configFiles
+KUBECONFIG_FOLDER=${PWD}
 
 kubectl delete -f ${KUBECONFIG_FOLDER}/chaincode_instantiate.yaml
 kubectl delete -f ${KUBECONFIG_FOLDER}/chaincode_install.yaml

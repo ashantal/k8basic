@@ -1,12 +1,12 @@
-
 #!/bin/bash
 
 if [ -d "${PWD}/configFiles" ]; then
     KUBECONFIG_FOLDER=${PWD}/configFiles
 else
     echo "Configuration files are not found."
-    exit
+    KUBECONFIG_FOLDER=${PWD}
 fi
+
 
 # Create Docker deployment
 if [ "$(cat configFiles/peersDeployment.yaml | grep -c tcp://docker:2375)" != "0" ]; then
@@ -113,13 +113,13 @@ done
 # Create services for all peers, ca, orderer
 echo -e "\nCreating Services for blockchain network"
 echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/blockchain-services.yaml"
-kubectl create -f ${KUBECONFIG_FOLDER}/blockchain-services-node.yaml
+kubectl create -f ${KUBECONFIG_FOLDER}/blockchain-services.yaml
 
 
 # Create peers, ca, orderer using Kubernetes Deployments
 echo -e "\nCreating new Deployment to create four peers in network"
 echo "Running: kubectl create -f ${KUBECONFIG_FOLDER}/peersDeployment.yaml"
-kubectl create -f ${KUBECONFIG_FOLDER}/peersDeployment-node.yaml
+kubectl create -f ${KUBECONFIG_FOLDER}/peersDeployment.yaml
 
 echo "Checking if all deployments are ready"
 
