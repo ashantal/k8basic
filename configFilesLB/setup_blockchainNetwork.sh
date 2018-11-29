@@ -9,7 +9,7 @@ fi
 
 
 # Create Docker deployment
-if [ "$(cat configFiles/peersDeployment.yaml | grep -c tcp://docker:2375)" != "0" ]; then
+if [ "$(cat peersDeployment.yaml | grep -c tcp://docker:2375)" != "0" ]; then
     echo "peersDeployment.yaml file was configured to use Docker in a container."
     echo "Creating Docker deployment"
 
@@ -72,7 +72,7 @@ echo -e "${pod} is now ${podSTATUS}"
 echo -e "\nStarting to copy artifacts in persistent volume."
 
 #fix for this script to work on icp and ICS
-kubectl cp ./artifacts $pod:/shared/
+kubectl cp ../artifacts $pod:/shared/
 
 echo "Waiting for 10 more seconds for copying artifacts to avoid any network delay"
 sleep 10
