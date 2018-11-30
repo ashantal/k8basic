@@ -206,3 +206,7 @@ echo "Chaincode Instantiation Completed Successfully"
 
 sleep 15
 echo -e "\nNetwork Setup Completed !!"
+kubectl expose deployment blockchain-ca --port=7054  --type=LoadBalancer --name=org-ca
+kubectl expose deployment blockchain-orderer --port=31010  --type=LoadBalancer --name=org-orderer
+kubectl expose deployment blockchain-org1peer1 --port=30110  --type=LoadBalancer --name=org-peer
+kubectl expose deployment blockchain-org1peer1 --port=30111  --type=LoadBalancer --name=org-events
