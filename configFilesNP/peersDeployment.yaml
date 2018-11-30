@@ -99,7 +99,6 @@ spec:
         volumeMounts:
         - mountPath: /shared
           name: sharedvolume
-
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -172,7 +171,9 @@ spec:
         - name: CORE_PEER_TLS_ENABLED
           value: "false"
         - name: CORE_LEDGER_STATE_STATEDATABASE
-          value: goleveldb
+          value: CouchDB
+        - name: CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS
+          value: blockchain-db:30055
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric/
         - name: ORDERER_URL

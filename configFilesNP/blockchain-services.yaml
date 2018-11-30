@@ -19,6 +19,23 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: blockchain-db
+  labels:
+    run: blockchain-db
+spec:
+  type: NodePort
+  selector:
+    name: couchdb
+  ports:
+  - protocol: TCP
+    nodePort: 30055
+    targetPort: 
+    port: 30055
+    name: grpc
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: blockchain-orderer
   labels:
     run: blockchain-orderer
