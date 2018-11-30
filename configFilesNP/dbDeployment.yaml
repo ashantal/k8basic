@@ -13,6 +13,9 @@ spec:
       containers:
       - name: couchdb
         image: hyperledger/fabric-couchdb
+        ports:
+        - containerPort: 5984
+          name: http
         env:
         - name: COUCHDB_USER
           value: ""
