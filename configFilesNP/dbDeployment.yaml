@@ -2,22 +2,23 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: couch-db
+    name: couchdb
 spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        name: couchdb
-    spec:
-      containers:
-      - name: couchdb
-        image: hyperledger/fabric-couchdb
-        ports:
-        - containerPort: 5984
-          name: http
-        env:
-        - name: COUCHDB_USER
-          value: ""
-        - name: COUCHDB_PASSWORD
-          value: ""
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                tier: db
+        spec:
+            terminationGracePeriodSeconds: 10
+            containers:
+                - name: couchdb
+                  image: couchdb:1.6
+                  ports:
+                      - containerPort: 5984
+                        name: http
+                  env:
+                      - name: COUCHDB_USER
+                        value: ""
+                      - name: COUCHDB_PASSWORD
+                        value: ""
